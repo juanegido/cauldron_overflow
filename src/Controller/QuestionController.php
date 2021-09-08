@@ -29,6 +29,9 @@ class QuestionController extends AbstractController
             'Maybe... try saying the spell backwards',
         ];
 
+        dump($slug, $this);
+
+
 
         return $this->render('question/show.html.twig',
         [
