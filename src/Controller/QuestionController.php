@@ -9,22 +9,22 @@ use Symfony\Component\Routing\Annotation\Route;
 class QuestionController extends AbstractController
 {
     /**
-     * @Route("/")
+     * @Route("/", name="app_homepage")
      */
 
     public function homepage(): Response
     {
-        return new Response('What a bewitching controller we have conjured!');
+        return $this->render('question/homepage.html.twig');
     }
 
     /**
-     * @Route ("/questions/{slug}")
+     * @Route ("/questions/{slug}", name="app_question_show")
      */
     public function show($slug): Response
     {
 
         $answers = [
-            'Make sure your car is sitting perfectly still :)',
+            'Make sure your car is sitting perfectly still 😊 ',
             'Honestly, I like furry shows better than my cat',
             'Maybe... try saying the spell backwards',
         ];
